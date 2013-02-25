@@ -24,9 +24,13 @@ import net.nurik.roman.dashclock.R;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.net.Uri;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
+
+import static com.google.android.apps.dashclock.LogUtils.LOGE;
+import static com.google.android.apps.dashclock.LogUtils.LOGW;
 
 /**
  * Unread SMS and MMS's extension.
@@ -49,6 +53,10 @@ public class SmsExtension extends DashClockExtension {
         int unreadConversations = 0;
         StringBuilder names = new StringBuilder();
         Cursor cursor = openMmsSmsCursor();
+        if (cursor == null) {
+            LOGE(TAG, "Null SMS cursor, short-circuiting.");
+            return;
+        }
         long threadId = 0;
 
         while (cursor.moveToNext()) {
@@ -123,7 +131,8 @@ public class SmsExtension extends DashClockExtension {
 
 
     private Cursor openMmsSmsCursor() {
-        return getContentResolver().query(
+        try {
+            return getContentResolver().query(
                 TelephonyProviderConstants.MmsSms.CONTENT_CONVERSATIONS_URI,
                 MmsSmsQuery.PROJECTION,
                 TelephonyProviderConstants.Mms.READ + "=0 AND "
@@ -134,6 +143,11 @@ public class SmsExtension extends DashClockExtension {
                         + TelephonyProviderConstants.Sms.MESSAGE_TYPE_INBOX + ")",
                 null,
                 null);
+        } catch (SQLException e) {
+            // From developer console: "SQLiteException: table spam_filter already exists"
+            LOGE(TAG, "Error accessing SMS provider", e);
+            return null;
+        }
     }
 
     private Cursor openMmsAddrCursor(long mmsMsgId) {
@@ -171,7 +185,7 @@ public class SmsExtension extends DashClockExtension {
         } catch (IllegalArgumentException e) {
             // Can be called by the content provider (from Google Play crash/ANR console)
             // java.lang.IllegalArgumentException: URI: content://com.android.contacts/phone_lookup/
-            LogUtils.LOGW(TAG, "Error looking up contact name", e);
+            LOGW(TAG, "Error looking up contact name", e);
             return null;
         }
     }

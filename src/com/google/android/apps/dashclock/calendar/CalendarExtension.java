@@ -42,7 +42,7 @@ import java.util.Set;
 import java.util.TimeZone;
 
 import static com.google.android.apps.dashclock.LogUtils.LOGD;
-import static com.google.android.apps.dashclock.LogUtils.LOGW;
+import static com.google.android.apps.dashclock.LogUtils.LOGE;
 
 /**
  * Calendar "upcoming appointment" extension.
@@ -129,7 +129,7 @@ public class CalendarExtension extends DashClockExtension {
 
         Cursor cursor = openEventsCursor();
         if (cursor == null) {
-            LOGW(TAG, "Null events cursor, short-circuiting.");
+            LOGE(TAG, "Null events cursor, short-circuiting.");
             return;
         }
 
@@ -227,7 +227,8 @@ public class CalendarExtension extends DashClockExtension {
         String[] calendars = calendarSet.toArray(new String[calendarSet.size()]);
 
         long now = getCurrentTimestamp();
-        return getContentResolver().query(
+        try {
+            return getContentResolver().query(
                 CalendarContract.Instances.CONTENT_URI.buildUpon()
                         .appendPath(Long.toString(now))
                         .appendPath(Long.toString(now + mLookAheadHours * HOUR_MILLIS))
@@ -242,6 +243,10 @@ public class CalendarExtension extends DashClockExtension {
                         + calendarSelection + ")",
                 calendars,
                 CalendarContract.Instances.BEGIN);
+        } catch (SecurityException e) {
+            LOGE(TAG, "Error querying calendar API", e);
+            return null;
+        }
     }
 
     private String generateCalendarSelection() {
