@@ -143,7 +143,8 @@ public class SmsExtension extends DashClockExtension {
                         + TelephonyProviderConstants.Sms.MESSAGE_TYPE_INBOX + ")",
                 null,
                 null);
-        } catch (SQLException e) {
+        } catch (Exception e) {
+            // Catch all exceptions because the SMS provider is crashy
             // From developer console: "SQLiteException: table spam_filter already exists"
             LOGE(TAG, "Error accessing SMS provider", e);
             return null;
