@@ -22,7 +22,7 @@
     <string name="more_options">추가 옵션</string>
 
     <!-- Configuration -->
-    <string name="title_configure">DashClock Widget 구성</string>
+    <string name="title_configure">DashClock 위젯 구성</string>
     <string name="section_extensions">확장 프로그램</string>
     <string name="section_appearance">외관</string>
     <string name="section_advanced">고급</string>
@@ -30,7 +30,7 @@
     <string name="title_apps">애플리케이션</string>
     <string name="title_shortcuts">바로가기</string>
 
-    <string name="get_more_extensions">더 많은 확장 프로그램 가져 오기</string>
+    <string name="get_more_extensions">더 많은 확장 프로그램 다운로드</string>
     <string name="add_another_extension">다른 확장 프로그램 추가</string>
     <string name="more_extensions">추가 확장 프로그램</string>
     <string name="done">완료</string>
@@ -61,7 +61,9 @@
         <i><a href="http://www.opoloo.com/">Opoloo</a>의 Günther Beyer의</i><br>
         <b><a href="http://www.androidicons.com/">Android Developer Icons</a></b><br><br>
         <i>Carl A. Bauer의</i><br>
-        <b><a href="https://github.com/bauerca/drag-sort-listview">DragSortListView</a></b>
+        <b><a href="https://github.com/bauerca/drag-sort-listview">DragSortListView</a></b><br><br>
+        한국어 번역:<br>
+        <i>이용대, Shuhrat Dehkanov</i>
     ]]></string>
 
     <!-- Weather -->
@@ -77,7 +79,7 @@
     <string name="no_location_data">위치 정보를 확인할 수 없습니다</string>
 
     <!-- Gmail -->
-    <string name="gmail_extension_title">Gmail</string>
+    <string name="gmail_extension_title">읽지 않은 Gmail 개수</string>
     <string name="gmail_extension_description">
         Gmail의 받은편지함 또는 자동분류함의 읽지 않은 메일 개수를 표시합니다.
     </string>
@@ -104,12 +106,13 @@
         <item quantity="other">%1$s 일</item>
     </plurals>
     <plurals name="calendar_template_hours">
-        <item quantity="one">%1$s 시간</item>
-        <item quantity="other">%1$s 시간</item>
+        <item quantity="one">%1$s시간</item>
+        <item quantity="other">%1$s시간</item>
     </plurals>
     <plurals name="calendar_template_mins">
-        <item quantity="other">%1$s 분</item>
+        <item quantity="other">%1$s분</item>
     </plurals>
+    <string name="today">오늘</string>
 
     <!-- Missed calls -->
     <string name="missed_calls_extension_title">부재중 전화</string>
@@ -121,6 +124,7 @@
         <item quantity="other">%1$s개 부재중 전화</item>
     </plurals>
     <string name="missed_calls_body_template">발신자: %1$s</string>
+    <!--<string name="missed_calls_unknown">Unknown</string>-->
 
     <!-- SMS + MMS -->
     <string name="sms_extension_title">메시지</string>

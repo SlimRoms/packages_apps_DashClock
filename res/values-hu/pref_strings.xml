@@ -16,7 +16,7 @@
 
 <resources>
     <!-- Advanced widget preferences -->
-    <string name="pref_clock_shortcut_title">Óra parancsikon</string>
+    <string name="pref_clock_shortcut_title">Óra parancsikonja</string>
     <string name="pref_homescreen_background_opacity_title">Kezdőképernyős widget háttére</string>
     <string-array name="pref_homescreen_background_opacity_display_names">
         <item>Teljesen átlátszó</item>
@@ -25,16 +25,17 @@
         <item>75% fekete</item>
         <item>Teljesen fekete</item>
     </string-array>
-
     <string name="pref_aggressive_centering_title">Mindig középen</string>
     <string name="pref_aggressive_centering_description">Az óra mindig középen legyen</string>
+    <string name="pref_hide_settings_title">Beállítások gomb elrejtése</string>
+    <string name="pref_hide_settings_description">Beállítások gomb elrejtése függőleges widgetnél (alternatívaként a "DashClock beállítások" parancsikont lehet használni)</string>
 
     <!-- Universal settings preferences -->
     <string name="pref_shortcut_title">Parancsikon</string>
     <string name="pref_shortcut_default">(Alapértelmezett)</string>
 
     <!-- Weather -->
-    <string name="pref_weather_units_title">Idojárási mértékegységek</string>
+    <string name="pref_weather_units_title">Mértékegység</string>
     <string-array name="pref_weather_units_display_names">
         <item>°F</item>
         <item>°C</item>
@@ -54,7 +55,7 @@
     </plurals>
 
     <!-- Calendar -->
-    <string name="pref_calendar_look_ahead_hours_title">Esemény megjelenítése adott időn belül</string>
+    <string name="pref_calendar_look_ahead_hours_title">Megjelenítés ennyi időn belül</string>
     <string-array name="pref_calendar_look_ahead_hours_display_names">
         <item>3 óra</item>
         <item>6 óra</item>
@@ -70,4 +71,6 @@
     </plurals>
     <string name="pref_calendar_custom_visibility_title">Egyéni megjelenítés</string>
     <string name="pref_calendar_custom_visibility_description">Ha nincs bepipálva, akkor a Naptár alkalmazás összes látható naptárát megjeleníti</string>
+    <string name="pref_calendar_show_all_day_title">Egész napos események</string>
+    <string name="pref_calendar_show_all_day_description">Születésnapok és más események mutatása</string>
 </resources>

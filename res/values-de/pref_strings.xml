@@ -25,9 +25,10 @@
         <item>75% dunkel</item>
         <item>100% dunkel</item>
     </string-array>
-
     <string name="pref_aggressive_centering_title">Immer mittig halten</string>
     <string name="pref_aggressive_centering_description">Kann in unvorhersehbarem Verschieben des Widgets enden</string>
+    <!--<string name="pref_hide_settings_title">Hide settings button</string>-->
+    <!--<string name="pref_hide_settings_description">Hide the configuration button when the widget is vertically expanded (a "Configure DashClock Widget" home screen shortcut is available as an alternative)</string>-->
 
     <!-- Universal settings preferences -->
     <string name="pref_shortcut_title">Verknüpfung</string>
@@ -67,6 +68,8 @@
     <plurals name="pref_calendar_selected_summary_template">
         <item quantity="other">%1$d von %2$d Kalender ausgewählt</item>
     </plurals>
-    <string name="pref_calendar_custom_visibility_title">Benutzerdefinierten Kalender Sichtbarkeit</string>
-    <string name="pref_calendar_custom_visibility_description">Ist die Option deaktiviert, zeigen alle sichtbaren Kalender in der Kalender-App</string>
+    <string name="pref_calendar_custom_visibility_title">Sichtbarkeit benutzerdefinierter Kalender</string>
+    <string name="pref_calendar_custom_visibility_description">Aktivieren, um nur ausgewählte Kalender anzuzeigen</string>
+    <string name="pref_calendar_show_all_day_title">Zeige ganztägige Termine</string>
+    <string name="pref_calendar_show_all_day_description">Zeige ganztägige Kalendertermine wie Geburtstage</string>
 </resources>

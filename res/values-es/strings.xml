@@ -108,6 +108,7 @@
     <plurals name="calendar_template_mins">
         <item quantity="other">%1$s min</item>
     </plurals>
+    <string name="today">Hoy</string>
 
     <!-- Missed calls -->
     <string name="missed_calls_extension_title">Llamadas perdidas</string>
@@ -120,6 +121,7 @@
         <item quantity="other">%1$s llamadas perdidas</item>
     </plurals>
     <string name="missed_calls_body_template">De: %1$s</string>
+    <!--<string name="missed_calls_unknown">Unknown</string>-->
 
     <!-- SMS + MMS -->
     <string name="sms_extension_title">Mensajes de texto</string>
