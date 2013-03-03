@@ -150,6 +150,13 @@ public class ConfigurationActivity extends Activity {
                     public void onClick(View view) {
                         PopupMenu actionOverflowMenu = new PopupMenu(darkThemeContext, view);
                         actionOverflowMenu.inflate(R.menu.configure_overflow);
+                        if (!(LogUtils.FORCE_DEBUG)) {
+                            MenuItem sendLogsItem = actionOverflowMenu.getMenu()
+                                    .findItem(R.id.action_send_logs);
+                            if (sendLogsItem != null) {
+                                sendLogsItem.setVisible(false);
+                            }
+                        }
                         actionOverflowMenu.show();
                         actionOverflowMenu.setOnMenuItemClickListener(mActionOverflowClickListener);
                     }
@@ -224,6 +231,10 @@ public class ConfigurationActivity extends Activity {
                     startActivity(new Intent(Intent.ACTION_VIEW,
                             Uri.parse("http://play.google.com/store/search?q=DashClock+Extension"
                                     + "&c=apps")));
+                    return true;
+
+                case R.id.action_send_logs:
+                    LogUtils.sendLogs(ConfigurationActivity.this);
                     return true;
 
                 case R.id.action_about:
