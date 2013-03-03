@@ -135,7 +135,7 @@ public class CalendarExtension extends DashClockExtension {
             mLookAheadHours = DEFAULT_LOOK_AHEAD_HOURS;
         }
 
-        Cursor cursor = openEventsCursor(showAllDay);
+        Cursor cursor = tryOpenEventsCursor(showAllDay);
         if (cursor == null) {
             LOGE(TAG, "Null events cursor, short-circuiting.");
             return;
@@ -281,7 +281,7 @@ public class CalendarExtension extends DashClockExtension {
         return Calendar.getInstance(TimeZone.getTimeZone("UTC")).getTimeInMillis();
     }
 
-    private Cursor openEventsCursor(boolean showAllDay) {
+    private Cursor tryOpenEventsCursor(boolean showAllDay) {
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
         boolean customVisibility = sp.getBoolean(PREF_CUSTOM_VISIBILITY, false);
         // Filter out all day events unless the user expressly requested to show all day events
@@ -316,7 +316,7 @@ public class CalendarExtension extends DashClockExtension {
                         + calendarSelection + ")",
                 calendarsSelectionArgs,
                 CalendarContract.Instances.BEGIN);
-        } catch (SecurityException e) {
+        } catch (Exception e) {
             LOGE(TAG, "Error querying calendar API", e);
             return null;
         }
