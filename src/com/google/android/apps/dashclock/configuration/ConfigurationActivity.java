@@ -235,7 +235,7 @@ public class ConfigurationActivity extends Activity {
                     return true;
 
                 case R.id.action_send_logs:
-                    LogUtils.sendLogs(ConfigurationActivity.this);
+                    LogUtils.sendDebugLog(ConfigurationActivity.this);
                     return true;
 
                 case R.id.action_about:
