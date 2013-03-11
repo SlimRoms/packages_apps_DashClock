@@ -129,7 +129,8 @@
         <receiver android:name="com.google.android.apps.dashclock.weather.WeatherRetryReceiver" />
 
         <activity android:name="com.google.android.apps.dashclock.weather.WeatherSettingsActivity"
-            android:label="@string/title_weather_settings" />
+            android:label="@string/title_weather_settings"
+            android:theme="@style/PreferencesTheme" />
 
         <service
             android:name="com.google.android.apps.dashclock.nextalarm.NextAlarmExtension"
@@ -162,7 +163,8 @@
         </service>
 
         <activity android:name="com.google.android.apps.dashclock.gmail.GmailSettingsActivity"
-            android:label="@string/title_gmail_settings" />
+            android:label="@string/title_gmail_settings"
+            android:theme="@style/PreferencesTheme" />
 
         <service
             android:name="com.google.android.apps.dashclock.calendar.CalendarExtension"
@@ -181,7 +183,8 @@
         </service>
 
         <activity android:name="com.google.android.apps.dashclock.calendar.CalendarSettingsActivity"
-            android:label="@string/title_calendar_settings" />
+            android:label="@string/title_calendar_settings"
+            android:theme="@style/PreferencesTheme" />
 
         <service
             android:name="com.google.android.apps.dashclock.phone.MissedCallsExtension"
