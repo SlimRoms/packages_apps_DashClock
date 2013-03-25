@@ -120,7 +120,7 @@
         <item quantity="other">%1$s мин</item>
     </plurals>
     <string name="today">Сегодня</string>
-    <!--<string name="now">Now</string>-->
+    <string name="now">Сейчас</string>
 
     <!-- Missed calls -->
     <string name="missed_calls_extension_title">Пропущенные вызовы</string>
