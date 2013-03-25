@@ -21,7 +21,10 @@
     <string name="settings">Einstellungen</string>
     <string name="more_options">Erweiterte Einstellungen</string>
 
+    <string name="simple_date_format">E, MMM dd</string>
+
     <!-- Configuration -->
+    <string name="shortcut_label_configure">DashClock Widget konfigurieren</string>
     <string name="title_configure">DashClock Widget konfigurieren</string>
     <string name="section_extensions">Erweiterungen</string>
     <string name="section_appearance">Aussehen</string>
@@ -36,6 +39,10 @@
     <string name="done">Fertig</string>
     <string name="add_extension">Erweiterung hinzufügen</string>
     <string name="cancel">Abbrechen</string>
+
+    <!-- These strings never appear in release builds; translation is very low priority -->
+    <string name="send_logs">Send debug log</string>
+    <string name="send_logs_chooser_title">Send logs using</string>
 
     <string name="prev_date_style">Vorheriger Datumsstil</string>
     <string name="prev_time_style">Vorheriger Zeitstil</string>
@@ -113,6 +120,7 @@
         <item quantity="other">%1$s Minuten</item>
     </plurals>
     <string name="today">Heute</string>
+    <!--<string name="now">Now</string>-->
 
     <!-- Missed calls -->
     <string name="missed_calls_extension_title">Verpasste Anrufe</string>

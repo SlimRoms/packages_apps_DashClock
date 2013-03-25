@@ -21,7 +21,10 @@
     <string name="settings">Налаштування</string>
     <string name="more_options">Додаткові налаштування</string>
 
+    <string name="simple_date_format">E, MMM dd</string>
+
     <!-- Configuration -->
+    <string name="shortcut_label_configure">Налаштування DashClock Widget</string>
     <string name="title_configure">Налаштування DashClock Widget</string>
     <string name="section_extensions">Додатки</string>
     <string name="section_appearance">Відображення</string>
@@ -36,6 +39,10 @@
     <string name="done">Готово</string>
     <string name="add_extension">Додати</string>
     <string name="cancel">Скасувати</string>
+
+    <!-- These strings never appear in release builds; translation is very low priority -->
+    <string name="send_logs">Send debug log</string>
+    <string name="send_logs_chooser_title">Send logs using</string>
 
     <string name="prev_date_style">Попередній стиль дати</string>
     <string name="prev_time_style">Попередній стиль годинника</string>
@@ -112,6 +119,7 @@
         <item quantity="other">%1$s хв.</item>
     </plurals>
     <string name="today">Сьогодні</string>
+    <!--<string name="now">Now</string>-->
 
     <!-- Missed calls -->
     <string name="missed_calls_extension_title">Пропущені дзвінки</string>
