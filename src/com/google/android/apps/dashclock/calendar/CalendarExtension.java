@@ -256,7 +256,7 @@ public class CalendarExtension extends DashClockExtension {
                 expandedTimeFormat.setLength(0);
                 expandedTime = getString(R.string.today);
             } else {
-                expandedTimeFormat.append("EEEE, MMM dd");
+                expandedTimeFormat.append(getString(R.string.full_wday_month_day_no_year));
             }
 
         } else if (minutesUntilNextAppointment < 2) {
