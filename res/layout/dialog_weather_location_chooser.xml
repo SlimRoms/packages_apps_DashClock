@@ -21,6 +21,8 @@
 
     <EditText android:id="@+id/location_query"
         android:background="@drawable/ab_transparent_dark_holo"
+        android:textColor="@color/primary_text_color"
+        android:textCursorDrawable="@null"
         android:paddingLeft="24dp"
         android:paddingRight="24dp"
         android:layout_width="match_parent"

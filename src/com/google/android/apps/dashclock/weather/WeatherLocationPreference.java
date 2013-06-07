@@ -324,13 +324,13 @@ public class WeatherLocationPreference extends Preference {
                     ((TextView) convertView.findViewById(android.R.id.text1))
                             .setText(R.string.pref_weather_location_automatic);
                     ((TextView) convertView.findViewById(android.R.id.text2))
-                            .setText(R.string.pref_weather_location_automatic_description);
+                            .setHint(R.string.pref_weather_location_automatic_description);
                 } else {
                     LocationSearchResult result = mResults.get(position);
                     ((TextView) convertView.findViewById(android.R.id.text1))
                             .setText(result.displayName);
                     ((TextView) convertView.findViewById(android.R.id.text2))
-                            .setText(result.country);
+                            .setHint(result.country);
                 }
 
                 return convertView;
