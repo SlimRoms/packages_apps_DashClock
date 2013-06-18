@@ -148,9 +148,10 @@
         <item quantity="other">%1$s цепочек</item>
     </plurals>
     <string name="sms_body_template">От: %1$s</string>
+    <string name="sms_body_all_participants_template">Включая: %1$s</string>
 
     <!-- Welcome strings -->
-    <string name="welcome_title">Настройте ваш DashClock</string>
+    <string name="welcome_title">Настройте свой DashClock</string>
     <string name="welcome_description">Хотите видеть только дату и время? Тогда
         просто нажмите на галочку в верхнем углу! Но почему бы не кастомизировать DashClock
         несколькими <i>расширениями</i>?
