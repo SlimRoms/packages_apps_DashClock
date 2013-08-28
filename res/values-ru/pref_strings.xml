@@ -40,7 +40,10 @@
         <item>°F</item>
         <item>°C</item>
     </string-array>
-
+    <string name="pref_weather_location_title">Местоположение</string>
+    <string name="pref_weather_location_query_hint">Найти местоположение</string>
+    <string name="pref_weather_location_automatic">Автоматически</string>
+    <string name="pref_weather_location_automatic_description">На основе текущего местоположения.</string>
     <!-- Gmail -->
     <string name="pref_gmail_label_title">Показывать количество непрочитанных сообщений для папки</string>
     <string-array name="pref_gmail_label_display_names">
@@ -76,6 +79,16 @@
 
     <!-- Daydream preferences -->
     <string name="pref_daydream_color_title">Основной цвет</string>
+    <string name="pref_daydream_color_description">Цвет текста и значков в режиме заставки</string>
+    <string name="pref_daydream_night_mode_title">Ночной режим</string>
+    <string name="pref_daydream_night_mode_description">Очень тусклый экран (для темных помещений)</string>
+    <string name="pref_daydream_animation_title">Анимация</string>
+    <string-array name="pref_daydream_animation_display_names">
+        <item>Маятник (по умолчанию)</item>
+        <item>Скольжение</item>
+        <item>Затухание</item>
+        <item>Нет (может повредить экран)</item>
+    </string-array>
     <string name="pref_daydream_system_settings_title">Системные настройки заставки</string>
 
 </resources>
