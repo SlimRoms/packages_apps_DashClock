@@ -378,8 +378,7 @@ public abstract class DashClockExtension extends Service {
      * Requests that the main DashClock app stop watching all content URIs previously registered
      * with {@link #addWatchContentUris(String[])} for this extension.
      *
-     * @param uris The URIs to watch.
-     * @since v2
+     * @since Protocol Version 2 (API r2.x)
      */
     protected final void removeAllWatchContentUris() {
         try {
