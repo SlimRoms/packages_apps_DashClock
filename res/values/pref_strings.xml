@@ -33,7 +33,25 @@
         <item>100</item>
     </string-array>
 
+    <string-array name="pref_collapse_conditions_names">
+        <item>Always collapse small widget</item>
+        <item>2+ extensions are visible</item>
+        <item>3+ extensions are visible</item>
+        <item>4+ extensions are visible</item>
+        <item>5+ extensions are visible</item>
+        <item>Never collapse</item>
+    </string-array>
+    <string-array name="pref_collapse_conditions_values" translatable="false">
+        <item>-1</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>0</item>
+    </string-array>
+
     <string name="pref_aggressive_centering_title">Always center</string>
+    <string name="pref_collapse_conditions_title">Collapse mode conditions</string>
     <string name="pref_aggressive_centering_description">Can result in the clock jumping around for different widget states</string>
     <string name="pref_hide_settings_title">Hide settings button</string>
     <string name="pref_hide_settings_description">Hide the configuration button when the widget is vertically expanded (a \"DashClock Settings\" home screen shortcut is available as an alternative)</string>

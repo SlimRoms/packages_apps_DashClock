@@ -31,6 +31,9 @@ public class AppearanceConfig {
 
     static final String PREF_HOMESCREEN_BACKGROUND_OPACITY = "pref_homescreen_background_opacity";
     static final String PREF_AGGRESSIVE_CENTERING = "pref_aggressive_centering";
+    static final String PREF_COLLAPSE_CONDITIONS = "pref_collapse_conditions";
+    static final int EXPAND_DEFAULT = -1;
+    static final int EXPAND_ALWAYS = 0;
 
     static String[] TIME_STYLE_NAMES = new String[]{
             "default",
@@ -70,6 +73,24 @@ public class AppearanceConfig {
     public static boolean isAggressiveCenteringEnabled(Context context) {
         return PreferenceManager.getDefaultSharedPreferences(context)
                 .getBoolean(PREF_AGGRESSIVE_CENTERING, false);
+    }
+
+    public static boolean isForceExpandEnabled(Context context,
+        boolean isExpanded, int visibleExtensions) {
+        int expandCollapseRules = Integer.parseInt(PreferenceManager.
+            getDefaultSharedPreferences(context)
+            .getString(PREF_COLLAPSE_CONDITIONS, "-1"));
+
+        switch (expandCollapseRules) {
+            case EXPAND_DEFAULT:
+                return isExpanded;
+            case EXPAND_ALWAYS:
+                return true;
+            default:
+                if (visibleExtensions <= expandCollapseRules)
+                    return true;
+        }
+        return false;
     }
 
     public static int getHomescreenBackgroundColor(Context context) {

@@ -51,6 +51,10 @@ public abstract class DashClockRenderer {
 
     private static final int MAX_COLLAPSED_EXTENSIONS = 3;
 
+    // This is to compensate for slim DPI.  The height difference is larger
+    // than min_expanded_height_lock_screen divided by density.
+    private static final int MIN_HEIGHT_DIFFERENCE = 140;
+
     public static final String PREF_CLOCK_SHORTCUT = "pref_clock_shortcut";
     public static final String PREF_HIDE_SETTINGS = "pref_hide_settings";
 
@@ -99,8 +103,18 @@ public abstract class DashClockRenderer {
                 mOptions.target == Options.TARGET_LOCK_SCREEN
                         ? R.dimen.min_expanded_height_lock_screen
                         : R.dimen.min_expanded_height);
-        boolean isExpanded = (mOptions.minHeightDp
-                >= minExpandedHeight / res.getDisplayMetrics().density);
+        int heightDifference = mOptions.minHeightDp
+                - (int) (minExpandedHeight / res.getDisplayMetrics().density);
+
+        boolean isExpanded = ((mOptions.minHeightDp
+                >= minExpandedHeight / res.getDisplayMetrics().density) && (
+                heightDifference > MIN_HEIGHT_DIFFERENCE));
+
+        if (!isExpanded) {
+            // Force expand rules are go
+            isExpanded = AppearanceConfig.isForceExpandEnabled(mContext,
+                    isExpanded, visibleExtensions);
+        }
 
         // Step 1. Load the root layout
         vb.loadRootLayout(container, isExpanded

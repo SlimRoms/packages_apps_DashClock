@@ -31,6 +31,13 @@
         android:negativeButtonText="@null"
         android:positiveButtonText="@null" />
 
+    <ListPreference
+        android:key="pref_collapse_conditions"
+        android:entryValues="@array/pref_collapse_conditions_values"
+        android:entries="@array/pref_collapse_conditions_names"
+        android:title="@string/pref_collapse_conditions_title"
+        android:defaultValue="-1" />
+
     <CheckBoxPreference
         android:key="pref_aggressive_centering"
         android:title="@string/pref_aggressive_centering_title"
