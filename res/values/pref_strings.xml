@@ -51,7 +51,7 @@
     </string-array>
 
     <string name="pref_aggressive_centering_title">Always center</string>
-    <string name="pref_collapse_conditions_title">Collapse mode conditions</string>
+    <string name="pref_collapse_conditions_title">Collapsed mode conditions</string>
     <string name="pref_aggressive_centering_description">Can result in the clock jumping around for different widget states</string>
     <string name="pref_hide_settings_title">Hide settings button</string>
     <string name="pref_hide_settings_description">Hide the configuration button when the widget is vertically expanded (a \"DashClock Settings\" home screen shortcut is available as an alternative)</string>
