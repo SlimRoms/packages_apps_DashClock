@@ -25,7 +25,16 @@
         <item>75%</item>
         <item>100%</item>
     </string-array>
+    <string-array name="pref_collapse_conditions_names">
+        <item>Всегда сворачивать мелкие виджеты</item>
+        <item>2+ расширений видимо</item>
+        <item>3+ расширений видимо</item>
+        <item>4+ расширений видимо</item>
+        <item>5+ расширений видимо</item>
+        <item>Никогда не сворачивать</item>
+    </string-array>
     <string name="pref_aggressive_centering_title">Всегда по центру</string>
+    <string name="pref_collapse_conditions_title">Условия режима сворачивания</string>
     <string name="pref_aggressive_centering_description">Может спровоцировать смещение часов для разных состояний виджета</string>
     <string name="pref_hide_settings_title">Скрыть кнопку настроек</string>
     <string name="pref_hide_settings_description">Скрыть кнопку настроек когда виджет вертикально развёрнут (в качестве альтернативы доступен виджет настроек DashClock)</string>
