@@ -30,13 +30,11 @@ import android.appwidget.AppWidgetManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.drawable.BitmapDrawable;
 import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.TypedValue;
-import android.view.Gravity;
 import android.view.View;
 
 import java.util.List;
@@ -80,17 +78,13 @@ public abstract class DashClockRenderer {
         // Load data from extensions
         List<ExtensionWithData> extensions = mExtensionManager.getActiveExtensionsWithData();
         int activeExtensions = extensions.size();
-        int visibleExtensions = 0;
-        for (ExtensionWithData ewd : extensions) {
-            if (!ewd.latestData.visible()) {
-                continue;
-            }
-            ++visibleExtensions;
+        int visibleExtensions = 0;		
+        for (ExtensionWithData ewd : extensions) {		
+            if (!ewd.latestData.visible()) {		
+                continue;		
+            }		
+            ++visibleExtensions;		
         }
-
-        // Determine if we're on a tablet or not (lock screen widgets can't be collapsed on
-        // tablets).
-        boolean isTablet = res.getConfiguration().smallestScreenWidthDp >= 600;
 
         int shadeColor = AppearanceConfig.getHomescreenBackgroundColor(mContext);
 
@@ -125,7 +119,7 @@ public abstract class DashClockRenderer {
                         ? View.GONE : View.VISIBLE);
 
         // Step 3. Draw the basic clock face
-        boolean hideSettings = false;
+        boolean hideSettings;
         boolean hideClock =
                 (mOptions.target == Options.TARGET_HOME_SCREEN
                         && AppearanceConfig.isClockHiddenOnHomeScreen(mContext))
@@ -135,7 +129,7 @@ public abstract class DashClockRenderer {
         if (hideClock) {
             hideSettings = true;
         } else {
-            renderClockFace(vb);
+            renderClockFace(vb, mOptions.foregroundColor);
             hideSettings = AppearanceConfig.isSettingsButtonHidden(mContext);
         }
 
@@ -218,11 +212,11 @@ public abstract class DashClockRenderer {
         return vb.getRoot();
     }
 
-    public void renderClockFace(ViewBuilder vb) {
+    public void renderClockFace(ViewBuilder vb, int foregroundColor) {
         vb.removeAllViews(R.id.time_container);
         vb.addView(R.id.time_container,
                 vb.inflateChildLayout(
-                        AppearanceConfig.getCurrentTimeLayout(mContext),
+                        AppearanceConfig.getCurrentTimeLayout(mContext, foregroundColor),
                         R.id.time_container));
         vb.removeAllViews(R.id.date_container);
         vb.addView(R.id.date_container,
