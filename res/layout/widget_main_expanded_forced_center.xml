@@ -51,14 +51,6 @@
 
         </LinearLayout>
 
-        <ImageView android:id="@+id/widget_divider"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:scaleType="fitXY"
-            android:src="@drawable/widget_divider" />
-
         <ListView android:id="@+id/expanded_extensions"
             android:layout_width="match_parent"
             android:layout_height="0dp"
