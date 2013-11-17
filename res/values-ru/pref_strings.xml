@@ -17,14 +17,6 @@
 <resources>
     <!-- Advanced widget preferences -->
     <string name="pref_clock_shortcut_title">Ярлык для часов</string>
-    <string name="pref_homescreen_background_opacity_title">Фон виджета</string>
-    <string-array name="pref_homescreen_background_opacity_display_names">
-        <item>Полностью прозрачный</item>
-        <item>25%</item>
-        <item>50%</item>
-        <item>75%</item>
-        <item>100%</item>
-    </string-array>
 
     <string-array name="pref_collapse_conditions_names">
         <item>Всегда сворачивать мелкие виджеты</item>
