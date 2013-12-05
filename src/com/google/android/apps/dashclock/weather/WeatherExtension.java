@@ -42,7 +42,6 @@ import android.preference.PreferenceManager;
 import android.text.TextUtils;
 
 import com.google.android.apps.dashclock.LogUtils;
-import com.google.android.apps.dashclock.Utils;
 import com.google.android.apps.dashclock.api.DashClockExtension;
 import com.google.android.apps.dashclock.api.ExtensionData;
 import com.google.android.apps.dashclock.configuration.AppChooserPreference;
@@ -54,11 +53,12 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Locale;
 
+import static com.google.android.apps.dashclock.LogUtils.FORCE_DEBUG;
 import static com.google.android.apps.dashclock.LogUtils.LOGD;
 import static com.google.android.apps.dashclock.LogUtils.LOGE;
 import static com.google.android.apps.dashclock.LogUtils.LOGW;
 import static com.google.android.apps.dashclock.Utils.MINUTES_MILLIS;
-import static com.google.android.apps.dashclock.Utils.NANOS_PER_MILLIS;
+import static com.google.android.apps.dashclock.Utils.MILLIS_NANOS;
 import static com.google.android.apps.dashclock.Utils.SECONDS_MILLIS;
 import static com.google.android.apps.dashclock.weather.YahooWeatherApiClient.LocationInfo;
 import static com.google.android.apps.dashclock.weather.YahooWeatherApiClient.getLocationInfo;
@@ -86,7 +86,7 @@ public class WeatherExtension extends DashClockExtension {
     // At least 10 min b/w updates
     private static final int UPDATE_THROTTLE_MILLIS = 10 * MINUTES_MILLIS;
 
-    private static final long STALE_LOCATION_NANOS = 10 * MINUTES_MILLIS * NANOS_PER_MILLIS;
+    private static final long STALE_LOCATION_NANOS = 10 * MINUTES_MILLIS * MILLIS_NANOS;
 
     // 30 seconds for first error retry
     private static final int INITIAL_BACKOFF_MILLIS = 30 * SECONDS_MILLIS;
@@ -311,6 +311,11 @@ public class WeatherExtension extends DashClockExtension {
         }
         expandedBody.append(weatherData.location);
 
+        if (FORCE_DEBUG) {
+            expandedBody.append("\n")
+                    .append(SimpleDateFormat.getDateTimeInstance().format(new Date()));
+        }
+
         publishUpdate(new ExtensionData()
                 .visible(true)
                 .clickIntent(sWeatherIntent)
@@ -319,8 +324,7 @@ public class WeatherExtension extends DashClockExtension {
                         temperature + sWeatherUnits.toUpperCase(Locale.US),
                         weatherData.conditionText))
                 .icon(conditionIconId)
-                .expandedBody(SimpleDateFormat.getDateTimeInstance().format(new Date())));
-                //.expandedBody(expandedBody.toString()));
+                .expandedBody(expandedBody.toString()));
 
         // Mark that a successful weather update has been pushed
         resetAndCancelRetries();
