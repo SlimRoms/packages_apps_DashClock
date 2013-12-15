@@ -38,8 +38,6 @@
         <item>V rozšírenej miniaplikácii</item>
         <item>V spúšťači aplikácií</item>
     </string-array>
-    <string name="pref_show_app_launcher_icon_title">Zobraziť ikonu aplikácie</string>
-    <string name="pref_show_app_launcher_icon_description">Zobraziť Nastavenia DashClock v spúšťači</string>
 	<string name="pref_hide_clock_title">Skryť hodiny</string>
 	<string name="pref_hide_clock_description">Skryť hodiny a zobraziť len rozšírenia</string>
 	
