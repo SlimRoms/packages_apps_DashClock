@@ -67,6 +67,8 @@ public class ConfigureAdvancedFragment extends PreferenceFragment
                 findPreference(AppearanceConfig.PREF_COLLAPSE_CONDITIONS));
         BaseSettingsActivity.bindPreferenceSummaryToValue(
                 findPreference(AppearanceConfig.PREF_LOCKSCREEN_BACKGROUND_OPACITY));
+        BaseSettingsActivity.bindPreferenceSummaryToValue(
+                findPreference(AppearanceConfig.PREF_FONT));
     }
 
     @Override

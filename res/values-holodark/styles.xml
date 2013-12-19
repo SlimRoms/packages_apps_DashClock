@@ -94,6 +94,15 @@
         <item name="android:maxLines">5</item>
     </style>
 
+    <style name="ExtensionData.Text.ExpandedTitle.Condensed" parent="ExtensionData.Text.ExpandedTitle">
+        <item name="android:fontFamily">sans-serif-condensed</item>
+    </style>
+
+    <style name="ExtensionData.Text.ExpandedBody.Condensed" parent="ExtensionData.Text.ExpandedBody">
+        <item name="android:fontFamily">sans-serif-condensed</item>
+        <item name="android:textSize">@dimen/extension_expanded_body_text_size_condensed</item>
+    </style>
+
     <style name="ExtensionData.Text.Collapsed">
         <item name="android:layout_marginLeft">4dp</item>
         <item name="android:singleLine">true</item>

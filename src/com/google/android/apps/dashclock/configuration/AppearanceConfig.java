@@ -54,6 +54,11 @@ public class AppearanceConfig {
     static final String PREF_LOCKSCREEN_BACKGROUND_OPACITY = "pref_lockscreen_background_opacity";
     static final String PREF_LOCKSCREEN_HIDE_CLOCK = "pref_lockscreen_hide_clock";
 
+    // Font preferences
+    static final String PREF_FONT = "pref_font";
+    public static final String PREF_FONT_LIGHT = "light";
+    public static final String PREF_FONT_CONDENSED = "condensed";
+
     public static final int DEFAULT_WIDGET_FOREGROUND_COLOR = Color.WHITE;
 
     static String[] TIME_STYLE_NAMES = new String[]{
@@ -63,6 +68,7 @@ public class AppearanceConfig {
             "stock",
             "condensed",
             "big_small",
+            "alpha_condensed",
             "analog1",
             "analog2",
     };
@@ -71,6 +77,7 @@ public class AppearanceConfig {
             "default",
             "simple",
             "condensed_bold",
+            "default_condensed",
     };
 
     public static int getCurrentTimeLayout(Context context, int foregroundColor) {
@@ -169,5 +176,10 @@ public class AppearanceConfig {
 
         int backgroundColor = (foregroundColor == Color.WHITE) ? Color.BLACK : Color.WHITE;
         return (backgroundColor & 0xffffff) | ((opacity * 255 / 100) << 24);
+    }
+
+    public static String getFont(Context context) {
+        return PreferenceManager.getDefaultSharedPreferences(context)
+                                .getString(PREF_FONT, PREF_FONT_LIGHT);
     }
 }

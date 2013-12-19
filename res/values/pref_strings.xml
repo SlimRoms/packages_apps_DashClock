@@ -164,4 +164,16 @@
         <item>none</item>
     </string-array>
     <string name="pref_daydream_system_settings_title">System Daydream settings</string>
+
+    <!-- Font preferences -->
+    <string name="pref_font_title">Font</string>
+    <string-array name="pref_font_display_names">
+        <item>Light</item>
+        <item>Condensed</item>
+    </string-array>
+    <string-array name="pref_font_values">
+        <item>light</item>
+        <item>condensed</item>
+    </string-array>
+
 </resources>

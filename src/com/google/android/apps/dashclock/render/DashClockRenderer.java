@@ -80,12 +80,12 @@ public abstract class DashClockRenderer {
         // Load data from extensions
         List<ExtensionWithData> extensions = mExtensionManager.getActiveExtensionsWithData();
         int activeExtensions = extensions.size();
-        int visibleExtensions = 0;		
-        for (ExtensionWithData ewd : extensions) {		
-            if (!ewd.latestData.visible()) {		
-                continue;		
-            }		
-            ++visibleExtensions;		
+        int visibleExtensions = 0;
+        for (ExtensionWithData ewd : extensions) {
+            if (!ewd.latestData.visible()) {
+                continue;
+            }
+            ++visibleExtensions;
         }
 
         // Determine if we're on a tablet or not (lock screen widgets can't be collapsed on
@@ -393,7 +393,10 @@ public abstract class DashClockRenderer {
         if (convertRoot != null) {
             vb.useRoot(convertRoot);
         } else {
-            vb.loadRootLayout(container, R.layout.widget_list_item_expanded_extension);
+            int layoutId = (AppearanceConfig.PREF_FONT_LIGHT.equals(mOptions.font))
+                    ? R.layout.widget_list_item_expanded_extension
+                    : R.layout.widget_list_item_expanded_extension_condensed;
+            vb.loadRootLayout(container, layoutId);
         }
 
         if (ewd == null || ewd.latestData == null) {
@@ -467,6 +470,9 @@ public abstract class DashClockRenderer {
         public boolean newTaskOnClick;
         public OnClickListener onClickListener;
         public Intent clickIntentTemplate;
+
+        // Font preferences
+        public String font = AppearanceConfig.PREF_FONT_LIGHT;
     }
 
     public static interface OnClickListener {
