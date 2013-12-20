@@ -28,7 +28,7 @@
         android:paddingStart="16dp"
         android:paddingTop="12dp"
         android:paddingBottom="12dp"
-        android:color="#2333" />
+        android:color="@color/drag_handle" />
     <!--
     <View
         android:id="@+id/drag_handle"
