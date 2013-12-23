@@ -1,5 +1,5 @@
 <!--
-  Copyright 2013 SlimRoms Project.
+  Copyright 2012 Google Inc.
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -101,7 +101,7 @@
         <item name="android:ellipsize">end</item>
     </style>
 
-    <style name="Configuration.Theme.Base" parent="android:Theme.Holo">
+    <style name="Configuration.Theme.Base" parent="android:Theme.Holo.Light">
         <item name="isDialog">false</item>
     </style>
 
@@ -123,7 +123,7 @@
         <item name="android:windowBackground">@android:color/transparent</item>
     </style>
 
-    <style name="PreferencesTheme" parent="android:Theme.Holo" />
+    <style name="PreferencesTheme" parent="android:Theme.Holo.Light" />
 
     <style name="Configuration.ActionButton.Overflow" parent="android:Widget.Holo.ActionButton.Overflow">
         <item name="android:src">@drawable/ic_action_overflow</item>
