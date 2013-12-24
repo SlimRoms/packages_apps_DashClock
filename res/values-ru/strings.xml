@@ -139,7 +139,7 @@
     <!-- SMS + MMS -->
     <string name="sms_extension_title">Текстовые сообщения</string>
     <string name="sms_extension_description">
-        Отображает количество непрочтённых цепочек SMS и MMS вместе с именами отправителей.
+        Отображает количество непрочтённых цепочек SMS и MMS вместе с именами отправителе.
     </string>
     <plurals name="sms_title_template">
         <item quantity="one">%1$s цепочка</item>
@@ -156,5 +156,11 @@
         несколькими <i>расширениями</i>?
         \n\n<b>Расширения</b> добавляют отображение новых данных прямо внутри DashClock!
     </string>
+
+    <string name="remove">Удалить</string>
+    <string name="undo">Отменить</string>
+    <string name="extension_removed_template">\'%1$s\' удален.</string>
+    <string name="extensions_removed_template">%1%d расширений удалено.</string>
+    <string name="title_next_alarm_settings">Настройки расширения Next Alarm</string>
 
 </resources>

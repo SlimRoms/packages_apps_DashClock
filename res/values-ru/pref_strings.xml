@@ -92,4 +92,31 @@
     </string-array>
     <string name="pref_daydream_system_settings_title">Системные настройки заставки</string>
 
+    <string name="pref_hide_settings_title">Скрыть кнопку настроек</string>
+    <string name="pref_hide_settings_description">Скрыть кнопку настроек когда виджет вертикально развёрнут (в качестве альтернативы доступен виджет настроек DashClock)</string>
+
+    <string name="pref_background_title">Фон</string>
+    <string name="pref_foreground_color_title">Основной цвет</string>
+    <string name="pref_homescreen_title">Виджет домашнего экрана</string>
+    <string name="pref_lockscreen_title">Виджет экрана блокировки</string>
+    <string name="pref_background_opacity_title">Прозрачность фона</string>
+    <string-array name="pref_background_opacity_display_names">
+        <item>Невидимый</item>
+        <item>25% видимости</item>
+        <item>50% видимости</item>
+        <item>75% видимости</item>
+        <item>Непрозрачный</item>
+    </string-array>
+    <string name="pref_homescreen_foreground_color_title">Передний план виджета домашнего экрана</string>
+    <string name="pref_homescreen_foreground_color_description">Цвет текста и значков виджета(-ов) домашнего экрана</string>
+    <string name="pref_foreground_color_description">Цвет текста и значков</string>
+    <string name="pref_settings_button_title">Кнопка настроек</string>
+    <string-array name="pref_settings_button_display_names">
+        <item>Скрытая</item>
+        <item>В развернутом виджете</item>
+        <item>В списке приложений</item>
+    </string-array>
+    <string name="pref_hide_clock_title">Скрывать часы</string>
+    <string name="pref_hide_clock_description">Скрывать часы и показывать только расширения</string>
+
 </resources>
