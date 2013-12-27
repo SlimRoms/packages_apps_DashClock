@@ -41,8 +41,8 @@
     <string name="cancel">Отмена</string>
 
     <!-- These strings never appear in release builds; translation is very low priority -->
-    <string name="send_logs">Send debug log</string>
-    <string name="send_logs_chooser_title">Send logs using</string>
+    <string name="send_logs">Отправить журнал отладки</string>
+    <string name="send_logs_chooser_title">Отправить журнал отладки, используя</string>
 
     <string name="prev_date_style">Предыдущий стиль</string>
     <string name="prev_time_style">Предыдущий стиль</string>
