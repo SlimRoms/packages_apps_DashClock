@@ -83,7 +83,7 @@ public class GmailSettingsActivity extends BaseSettingsActivity {
 
                 preference.setSummary(getResources().getQuantityString(
                         R.plurals.pref_gmail_accounts_summary_template,
-                        numTotal, numSelected, numTotal));
+                        numSelected, numSelected, numTotal));
                 return true;
             }
         };

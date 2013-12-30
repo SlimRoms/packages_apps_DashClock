@@ -78,7 +78,7 @@ public class CalendarSettingsActivity extends BaseSettingsActivity {
 
                 preference.setSummary(getResources().getQuantityString(
                         R.plurals.pref_calendar_selected_summary_template,
-                        numTotal, numSelected, numTotal));
+                        numSelected, numSelected, numTotal));
                 return true;
             }
         };
