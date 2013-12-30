@@ -176,4 +176,10 @@
         <item>condensed</item>
     </string-array>
 
+    <string name="pref_background_color_title">Background color</string>
+    <string name="pref_background_color_description">The color of the background</string>
+
+    <string name="pref_show_separator_title">Separator between extensions</string>
+    <string name="pref_show_separator_description">Draws a shadow beneath each extension</string>
+
 </resources>

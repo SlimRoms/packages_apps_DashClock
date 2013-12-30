@@ -92,8 +92,6 @@ public abstract class DashClockRenderer {
         // tablets).
         boolean isTablet = res.getConfiguration().smallestScreenWidthDp >= 600;
 
-        int shadeColor = AppearanceConfig.getBackgroundColor(mContext, mOptions.target);
-
         boolean aggressiveCentering = AppearanceConfig.isAggressiveCenteringEnabled(mContext);
 
         int minExpandedHeight = res.getDimensionPixelSize(
@@ -125,9 +123,13 @@ public abstract class DashClockRenderer {
                                 : R.layout.widget_main_collapsed_forced_center)
                         : R.layout.widget_main_collapsed));
 
-        // Step 2. Configure the shade, if it should exist
-        vb.setViewBackgroundColor(R.id.shade, shadeColor);
-        vb.setViewVisibility(R.id.shade, shadeColor == 0 ? View.GONE : View.VISIBLE);
+        // Step 2. Set the clock shading and show/hide the separator
+        vb.setViewBackgroundColor(R.id.clock_row, mOptions.backgroundColor);
+        if (mOptions.showSeparator) {
+            vb.setViewVisibility(R.id.card_shadow, View.VISIBLE);
+        } else {
+            vb.setViewVisibility(R.id.card_shadow, View.GONE);
+        }
 
         // Step 3. Draw the basic clock face
         boolean hideSettings;
@@ -399,6 +401,16 @@ public abstract class DashClockRenderer {
             vb.loadRootLayout(container, layoutId);
         }
 
+        // Set the shade
+        vb.setViewBackgroundColor(R.id.list_item, mOptions.backgroundColor);
+
+        // Show/hide card shadow
+        if (mOptions.showSeparator) {
+            vb.setViewVisibility(R.id.card_shadow, View.VISIBLE);
+        } else {
+            vb.setViewVisibility(R.id.card_shadow, View.GONE);
+        }
+
         if (ewd == null || ewd.latestData == null) {
             vb.setTextViewText(R.id.text1, mContext.getResources()
                     .getText(R.string.status_none));
@@ -462,6 +474,7 @@ public abstract class DashClockRenderer {
         public int minWidthDp;
         public int minHeightDp;
         public int foregroundColor = AppearanceConfig.DEFAULT_WIDGET_FOREGROUND_COLOR;
+        public int backgroundColor = AppearanceConfig.DEFAULT_WIDGET_BACKGROUND_COLOR;
 
         // Only used by WidgetRenderer
         public int appWidgetId = AppWidgetManager.INVALID_APPWIDGET_ID; // optional
@@ -473,6 +486,8 @@ public abstract class DashClockRenderer {
 
         // Font preferences
         public String font = AppearanceConfig.PREF_FONT_LIGHT;
+
+        public boolean showSeparator = false;
     }
 
     public static interface OnClickListener {

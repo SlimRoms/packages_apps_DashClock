@@ -49,10 +49,12 @@ public class AppearanceConfig {
     static final int EXPAND_ALWAYS = 0;
 
     static final String PREF_HOMESCREEN_HIDE_CLOCK = "pref_homescreen_hide_clock";
+    static final String PREF_HOMESCREEN_SHOW_SEPARATOR = "pref_homescreen_show_separator";
 
     static final String PREF_LOCKSCREEN_FOREGROUND_COLOR = "pref_lockscreen_foreground_color";
     static final String PREF_LOCKSCREEN_BACKGROUND_OPACITY = "pref_lockscreen_background_opacity";
     static final String PREF_LOCKSCREEN_HIDE_CLOCK = "pref_lockscreen_hide_clock";
+    static final String PREF_LOCKSCREEN_SHOW_SEPARATOR = "pref_lockscreen_show_separator";
 
     // Font preferences
     static final String PREF_FONT = "pref_font";
@@ -60,6 +62,7 @@ public class AppearanceConfig {
     public static final String PREF_FONT_CONDENSED = "condensed";
 
     public static final int DEFAULT_WIDGET_FOREGROUND_COLOR = Color.WHITE;
+    public static final int DEFAULT_WIDGET_BACKGROUND_COLOR = Color.TRANSPARENT;
 
     static String[] TIME_STYLE_NAMES = new String[]{
             "default",
@@ -145,6 +148,17 @@ public class AppearanceConfig {
             default:
                 if (visibleExtensions <= expandCollapseRules)
                     return true;
+        }
+        return false;
+    }
+
+    public static boolean getShowSeparator(Context context, int target) {
+        if (target == DashClockRenderer.Options.TARGET_HOME_SCREEN) {
+            return PreferenceManager.getDefaultSharedPreferences(context)
+                                    .getBoolean(PREF_HOMESCREEN_SHOW_SEPARATOR, false);
+        } else if (target == DashClockRenderer.Options.TARGET_LOCK_SCREEN) {
+            return PreferenceManager.getDefaultSharedPreferences(context)
+                                    .getBoolean(PREF_LOCKSCREEN_SHOW_SEPARATOR, false);
         }
         return false;
     }

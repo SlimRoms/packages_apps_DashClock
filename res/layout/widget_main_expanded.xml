@@ -12,17 +12,11 @@
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
   See the License for the specific language governing permissions and
   limitations under the License.
-  -->
+-->
 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <!--suppress AndroidLintContentDescription -->
-    <ImageView android:id="@+id/shade"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -52,14 +46,16 @@
 
         </LinearLayout>
 
+        <ImageView
+            android:id="@+id/card_shadow"
+            style="@style/cardShadow"/>
+
         <ListView android:id="@+id/expanded_extensions"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="vertical"
             android:listSelector="@android:color/transparent"
-            android:requiresFadingEdge="vertical"
-            android:fadingEdgeLength="@dimen/list_fading_edge_length"
             android:divider="@null" />
 
     </LinearLayout>
