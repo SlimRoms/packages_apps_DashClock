@@ -15,44 +15,52 @@
 -->
 
 <!-- Global layout to allow space between days -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:background="?android:selectableItemBackground"
-              android:orientation="vertical">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:minHeight="?android:listPreferredItemHeightSmall">
 
-    <!--suppress AndroidLintUseCompoundDrawables -->
-    <RelativeLayout
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/list_item"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:paddingTop="12dp"
-        android:paddingBottom="12dp"
-        android:orientation="horizontal"
-        android:baselineAligned="false"
-        android:minHeight="?android:listPreferredItemHeightSmall">
+    <FrameLayout
+        android:id="@+id/list_item_shade"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
 
-        <ImageView style="@style/ExtensionData.Icon"
-                   android:id="@+id/icon"
-                   android:layout_marginEnd="12dp"
-                   tools:ignore="ContentDescription" />
+        <!--suppress AndroidLintUseCompoundDrawables -->
+        <RelativeLayout
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/list_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:orientation="horizontal"
+            android:baselineAligned="false"
+            android:background="?android:selectableItemBackground">
 
-        <TextView style="@style/ExtensionData.Text.ExpandedTitle.Condensed"
-                  android:id="@+id/text1"
-                  android:layout_toEndOf="@id/icon"
-                  android:layout_alignTop="@id/icon"
-                  android:layout_alignParentEnd="true" />
+            <ImageView style="@style/ExtensionData.Icon"
+                       android:id="@+id/icon"
+                       android:layout_marginEnd="12dp"
+                       tools:ignore="ContentDescription" />
 
-        <TextView style="@style/ExtensionData.Text.ExpandedBody.Condensed"
-                  android:id="@+id/text2"
-                  android:layout_below="@id/text1"
-                  android:layout_alignStart="@id/text1"
-                  android:layout_alignEnd="@id/text1" />
+            <TextView style="@style/ExtensionData.Text.ExpandedTitle.Condensed"
+                      android:id="@+id/text1"
+                      android:layout_toEndOf="@id/icon"
+                      android:layout_alignTop="@id/icon"
+                      android:layout_alignParentEnd="true" />
 
-    </RelativeLayout>
+            <TextView style="@style/ExtensionData.Text.ExpandedBody.Condensed"
+                      android:id="@+id/text2"
+                      android:layout_below="@id/text1"
+                      android:layout_alignStart="@id/text1"
+                      android:layout_alignEnd="@id/text1" />
+
+        </RelativeLayout>
+
+    </FrameLayout>
 
     <ImageView
         android:id="@+id/card_shadow"

@@ -407,7 +407,7 @@ public abstract class DashClockRenderer {
         }
 
         // Set the shade
-        vb.setViewBackgroundColor(R.id.list_item, mOptions.backgroundColor);
+        vb.setViewBackgroundColor(R.id.list_item_shade, mOptions.backgroundColor);
 
         // Show/hide card shadow
         if (mOptions.showSeparator) {
