@@ -23,6 +23,8 @@ import android.preference.PreferenceManager;
 
 import com.google.android.apps.dashclock.render.DashClockRenderer;
 
+import net.nurik.roman.dashclock.R;
+
 /**
  * Helper class for working with DashClock appearance settings.
  */
@@ -61,8 +63,11 @@ public class AppearanceConfig {
     public static final String PREF_FONT_LIGHT = "light";
     public static final String PREF_FONT_CONDENSED = "condensed";
 
+    public static final String PREF_TEXT_DENSITY = "pref_text_density";
+
     public static final int DEFAULT_WIDGET_FOREGROUND_COLOR = Color.WHITE;
     public static final int DEFAULT_WIDGET_BACKGROUND_COLOR = Color.TRANSPARENT;
+
 
     static String[] TIME_STYLE_NAMES = new String[]{
             "default",
@@ -195,5 +200,141 @@ public class AppearanceConfig {
     public static String getFont(Context context) {
         return PreferenceManager.getDefaultSharedPreferences(context)
                                 .getString(PREF_FONT, PREF_FONT_LIGHT);
+    }
+
+    public static int getTextDensity(Context context) {
+        return Integer.parseInt(PreferenceManager.getDefaultSharedPreferences(context)
+                .getString(PREF_TEXT_DENSITY, TextDensity.DEFAULT_DENSITY_STR));
+    }
+
+
+    /**
+     * Class with text size metrics for the different text densities
+     */
+    public static class TextDensity {
+        // Display density
+        public static final int DEFAULT_DENSITY = 0;
+        public static final String DEFAULT_DENSITY_STR = "0";
+
+        // Text sizes
+        private static final int[] sExtensionTitleTextSizeResId = new int[] {
+                R.dimen.extension_expanded_title_text_size_comfortable,
+                R.dimen.extension_expanded_title_text_size_cozy,
+                R.dimen.extension_expanded_title_text_size_compact
+        };
+        private static final int[] sExtensionBodyTextSizeResId = new int[] {
+                R.dimen.extension_expanded_body_text_size_comfortable,
+                R.dimen.extension_expanded_body_text_size_cozy,
+                R.dimen.extension_expanded_body_text_size_compact
+        };
+        private static final int[] sClockTextSizeLargeResId = new int[] {
+                R.dimen.clock_text_size_large_comfortable,
+                R.dimen.clock_text_size_large_cozy,
+                R.dimen.clock_text_size_large_compact
+        };
+        private static final int[] sClockTextSizeSmallResId = new int[] {
+                R.dimen.clock_text_size_small_comfortable,
+                R.dimen.clock_text_size_small_cozy,
+                R.dimen.clock_text_size_small_compact
+        };
+        private static final int[] sClockDateTextSizeResId = new int[] {
+                R.dimen.clock_date_text_size_comfortable,
+                R.dimen.clock_date_text_size_cozy,
+                R.dimen.clock_date_text_size_compact
+        };
+
+        // Padding
+        private static final int[] sRowPaddingTopResId = new int[] {
+                R.dimen.list_item_row_padding_top_comfortable,
+                R.dimen.list_item_row_padding_top_cozy,
+                R.dimen.list_item_row_padding_top_compact
+        };
+        private static final int[] sRowPaddingBottomResId = new int[] {
+                R.dimen.list_item_row_padding_bottom_comfortable,
+                R.dimen.list_item_row_padding_bottom_cozy,
+                R.dimen.list_item_row_padding_bottom_compact
+        };
+
+        private static final int[] sRowPaddingSideResId = new int[] {
+                R.dimen.list_item_row_padding_side_comfortable,
+                R.dimen.list_item_row_padding_side_cozy,
+                R.dimen.list_item_row_padding_side_compact
+        };
+
+        // Static values, so we don't always hit Resources
+        private static int[] sTitleTextSizeCache = new int [] {-1, -1, -1};
+        private static int[] sBodyTextSizeCache = new int [] {-1, -1, -1};
+        private static int[] sRowPaddingTopCache = new int [] {-1, -1, -1};
+        private static int[] sRowPaddingBottomCache = new int [] {-1, -1, -1};
+        private static int[] sRowPaddingSideCache = new int [] {-1, -1, -1};
+
+        private static int[] sClockTextSizeLargeCache = new int [] {-1, -1, -1};
+        private static int[] sClockTextSizeSmallCache = new int [] {-1, -1, -1};
+        private static int[] sClockDateTextSizeCache = new int [] {-1, -1, -1};
+
+        // Results in PX
+        public static int getExtensionTitleTextSize(Context context, int textDensity) {
+            if (sTitleTextSizeCache[textDensity] == -1)
+                sTitleTextSizeCache[textDensity] = context.getResources()
+                        .getDimensionPixelSize(sExtensionTitleTextSizeResId[textDensity]);
+            return sTitleTextSizeCache[textDensity];
+        }
+
+        // Results in PX
+        public static int getExtensionBodyTextSize(Context context, int textDensity) {
+            if (sBodyTextSizeCache[textDensity] == -1)
+                sBodyTextSizeCache[textDensity] = context.getResources()
+                        .getDimensionPixelSize(sExtensionBodyTextSizeResId[textDensity]);
+            return sBodyTextSizeCache[textDensity];
+        }
+
+        // Results in PX
+        public static int getClockTextSizeLarge(Context context, int textDensity) {
+            if (sClockTextSizeLargeCache[textDensity] == -1)
+                sClockTextSizeLargeCache[textDensity] = context.getResources()
+                        .getDimensionPixelSize(sClockTextSizeLargeResId[textDensity]);
+            return sClockTextSizeLargeCache[textDensity];
+        }
+
+        // Results in PX
+        public static int getClockTextSizeSmall(Context context, int textDensity) {
+            if (sClockTextSizeSmallCache[textDensity] == -1)
+                sClockTextSizeSmallCache[textDensity] = context.getResources()
+                        .getDimensionPixelSize(sClockTextSizeSmallResId[textDensity]);
+            return sClockTextSizeSmallCache[textDensity];
+        }
+
+        // Results in PX
+        public static int getClockDateTextSize(Context context, int textDensity) {
+            if (sClockDateTextSizeCache[textDensity] == -1)
+                sClockDateTextSizeCache[textDensity] = context.getResources()
+                        .getDimensionPixelSize(sClockDateTextSizeResId[textDensity]);
+            return sClockDateTextSizeCache[textDensity];
+        }
+
+        // Results in PX
+        public static int getRowPaddingTop(Context context, int textDensity) {
+            if (sRowPaddingTopCache[textDensity] == -1)
+                sRowPaddingTopCache[textDensity] = context.getResources()
+                        .getDimensionPixelSize(sRowPaddingTopResId[textDensity]);
+            return sRowPaddingTopCache[textDensity];
+        }
+
+        // Results in PX
+        public static int getRowPaddingBottom(Context context, int textDensity) {
+            if (sRowPaddingBottomCache[textDensity] == -1)
+                sRowPaddingBottomCache[textDensity] = context.getResources()
+                        .getDimensionPixelSize(sRowPaddingBottomResId[textDensity]);
+            return sRowPaddingBottomCache[textDensity];
+        }
+
+        // Results in PX
+        public static int getRowPaddingSide(Context context, int textDensity) {
+            if (sRowPaddingSideCache[textDensity] == -1)
+                sRowPaddingSideCache[textDensity] = context.getResources()
+                        .getDimensionPixelSize(sRowPaddingSideResId[textDensity]);
+            return sRowPaddingSideCache[textDensity];
+        }
+
     }
 }

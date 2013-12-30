@@ -20,9 +20,18 @@
     <dimen name="extension_collapsed_vert_padding">4dp</dimen>
 
     <!-- We use dp units instead of sp since the lock screen is a fixed size area. -->
-    <dimen name="clock_text_size_large">64dp</dimen>
-    <dimen name="clock_text_size_small">42dp</dimen>
-    <dimen name="clock_date_text_size">14dp</dimen>
+    <dimen name="clock_text_size_large_comfortable">64dp</dimen>
+    <dimen name="clock_text_size_small_comfortable">42dp</dimen>
+    <dimen name="clock_date_text_size_comfortable">14dp</dimen>
+
+    <dimen name="clock_text_size_large_cozy">60dp</dimen>
+    <dimen name="clock_text_size_small_cozy">40dp</dimen>
+    <dimen name="clock_date_text_size_cozy">14dp</dimen>
+
+    <dimen name="clock_text_size_large_compact">56dp</dimen>
+    <dimen name="clock_text_size_small_compact">36dp</dimen>
+    <dimen name="clock_date_text_size_compact">12dp</dimen>
+
     <dimen name="clock_date_top_margin">-10dp</dimen>
     <dimen name="clock_margin_offset">10dp</dimen>
     <dimen name="analog_clock_size">74dp</dimen>
@@ -36,8 +45,28 @@
     <dimen name="extension_collapsed_text_size_single_line">16dp</dimen>
     <dimen name="extension_collapsed_text_size_two_line">10dp</dimen>
 
-    <dimen name="extension_expanded_title_text_size">18sp</dimen>
-    <dimen name="extension_expanded_body_text_size">12sp</dimen>
+    <!-- Text density dimensions -->
+    <dimen name="extension_expanded_title_text_size_comfortable">18sp</dimen>
+    <dimen name="extension_expanded_body_text_size_comfortable">14sp</dimen>
+
+    <dimen name="extension_expanded_title_text_size_cozy">16sp</dimen>
+    <dimen name="extension_expanded_body_text_size_cozy">12sp</dimen>
+
+    <dimen name="extension_expanded_title_text_size_compact">14sp</dimen>
+    <dimen name="extension_expanded_body_text_size_compact">12sp</dimen>
+
+    <!-- List item row padding -->
+    <dimen name="list_item_row_padding_top_comfortable">12dp</dimen>
+    <dimen name="list_item_row_padding_top_cozy">8dp</dimen>
+    <dimen name="list_item_row_padding_top_compact">4dp</dimen>
+
+    <dimen name="list_item_row_padding_bottom_comfortable">12dp</dimen>
+    <dimen name="list_item_row_padding_bottom_cozy">8dp</dimen>
+    <dimen name="list_item_row_padding_bottom_compact">4dp</dimen>
+
+    <dimen name="list_item_row_padding_side_comfortable">16dp</dimen>
+    <dimen name="list_item_row_padding_side_cozy">16dp</dimen>
+    <dimen name="list_item_row_padding_side_compact">16dp</dimen>
 
     <dimen name="extension_icon_expanded_size">24dp</dimen>
     <dimen name="extension_icon_collapsed_size">22dp</dimen>

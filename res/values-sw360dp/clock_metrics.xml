@@ -19,18 +19,32 @@
     <dimen name="extension_collapsed_vert_padding">8dp</dimen>
 
     <!-- We use dp units instead of sp since the lock screen is a fixed size area. -->
-    <dimen name="clock_text_size_large">72dp</dimen>
-    <dimen name="clock_text_size_small">48dp</dimen>
-    <dimen name="clock_date_text_size">16dp</dimen>
+    <dimen name="clock_text_size_large_comfortable">72dp</dimen>
+    <dimen name="clock_text_size_small_comfortable">48dp</dimen>
+    <dimen name="clock_date_text_size_comfortable">16dp</dimen>
+
+    <dimen name="clock_text_size_large_cozy">64dp</dimen>
+    <dimen name="clock_text_size_small_cozy">40dp</dimen>
+    <dimen name="clock_date_text_size_cozy">14dp</dimen>
+
+    <dimen name="clock_text_size_large_compact">56dp</dimen>
+    <dimen name="clock_text_size_small_compact">36dp</dimen>
+    <dimen name="clock_date_text_size_compact">12dp</dimen>
+
     <dimen name="clock_date_top_margin">-12dp</dimen>
     <dimen name="clock_margin_offset">12dp</dimen>
     <dimen name="analog_clock_size">84dp</dimen>
 
-    <dimen name="extension_expanded_title_text_size">22sp</dimen>
-    <dimen name="extension_expanded_body_text_size">16sp</dimen>
-    <dimen name="extension_expanded_body_text_size_condensed">18sp</dimen>
+    <dimen name="extension_expanded_title_text_size_comfortable">22sp</dimen>
+    <dimen name="extension_expanded_body_text_size_comfortable">18sp</dimen>
 
-    <dimen name="extension_icon_expanded_size">32dp</dimen>
+    <dimen name="extension_expanded_title_text_size_cozy">20sp</dimen>
+    <dimen name="extension_expanded_body_text_size_cozy">16sp</dimen>
+
+    <dimen name="extension_expanded_title_text_size_compact">18sp</dimen>
+    <dimen name="extension_expanded_body_text_size_compact">14sp</dimen>
+
+    <dimen name="extension_icon_expanded_size">28dp</dimen>
     <dimen name="extension_icon_collapsed_size">24dp</dimen>
 
     <dimen name="daydream_extensions_width">360dp</dimen>

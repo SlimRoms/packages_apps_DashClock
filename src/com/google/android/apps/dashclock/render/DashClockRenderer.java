@@ -277,31 +277,36 @@ public abstract class DashClockRenderer {
                         AppearanceConfig.getCurrentDateLayout(mContext),
                         R.id.date_container));
 
+        int clockTextSizeLargePx = AppearanceConfig.TextDensity.getClockTextSizeLarge(mContext,
+                mOptions.textDensity);
+        int clockTextSizeSmallPx = AppearanceConfig.TextDensity.getClockTextSizeSmall(mContext,
+                mOptions.textDensity);
+        int clockDatetextSizePx = AppearanceConfig.TextDensity.getClockDateTextSize(mContext,
+                mOptions.textDensity);
+
         if (mOptions.minWidthDp < MIN_NORMAL_FONTSIZE_WIDTH_DP) {
             Resources res = mContext.getResources();
-            int miniTextSizeLargePx = res.getDimensionPixelSize(R.dimen.mini_clock_text_size_large);
-            int miniTextSizeSmallPx = res.getDimensionPixelSize(R.dimen.mini_clock_text_size_small);
-            int miniDateTextSizePx = res.getDimensionPixelSize(R.dimen.mini_clock_date_text_size);
-            for (int id : LARGE_TIME_COMPONENT_IDS) {
-                vb.setTextViewTextSize(id, TypedValue.COMPLEX_UNIT_PX, miniTextSizeLargePx);
-            }
-            for (int id : SMALL_TIME_COMPONENT_IDS) {
-                vb.setTextViewTextSize(id, TypedValue.COMPLEX_UNIT_PX, miniTextSizeSmallPx);
-            }
-            for (int id : DATE_COMPONENT_IDS) {
-                vb.setTextViewTextSize(id, TypedValue.COMPLEX_UNIT_PX, miniDateTextSizePx);
-            }
+            clockTextSizeLargePx = Math.min(clockTextSizeLargePx,
+                    res.getDimensionPixelSize(R.dimen.mini_clock_text_size_large));
+            clockTextSizeSmallPx = Math.min(clockTextSizeSmallPx,
+                    res.getDimensionPixelSize(R.dimen.mini_clock_text_size_small));
+            clockDatetextSizePx = Math.min(clockDatetextSizePx,
+                    res.getDimensionPixelSize(R.dimen.mini_clock_date_text_size));
+
             int miniDatePaddingPx = res.getDimensionPixelSize(R.dimen.mini_clock_date_top_padding);
             vb.setViewPadding(R.id.date_container, 0, miniDatePaddingPx, 0, 0);
         }
 
         for (int id : LARGE_TIME_COMPONENT_IDS) {
+            vb.setTextViewTextSize(id, TypedValue.COMPLEX_UNIT_PX, clockTextSizeLargePx);
             vb.setTextViewColor(id, mOptions.foregroundColor);
         }
         for (int id : SMALL_TIME_COMPONENT_IDS) {
+            vb.setTextViewTextSize(id, TypedValue.COMPLEX_UNIT_PX, clockTextSizeSmallPx);
             vb.setTextViewColor(id, mOptions.foregroundColor);
         }
         for (int id : DATE_COMPONENT_IDS) {
+            vb.setTextViewTextSize(id, TypedValue.COMPLEX_UNIT_PX, clockDatetextSizePx);
             vb.setTextViewColor(id, mOptions.foregroundColor);
         }
 
@@ -418,6 +423,19 @@ public abstract class DashClockRenderer {
             return vb.getRoot();
         }
 
+        // Text density
+        vb.setViewPadding(R.id.list_item,
+                AppearanceConfig.TextDensity.getRowPaddingSide(mContext, mOptions.textDensity),
+                AppearanceConfig.TextDensity.getRowPaddingTop(mContext, mOptions.textDensity),
+                AppearanceConfig.TextDensity.getRowPaddingSide(mContext, mOptions.textDensity),
+                AppearanceConfig.TextDensity.getRowPaddingBottom(mContext, mOptions.textDensity));
+        vb.setTextViewTextSize(R.id.text1, TypedValue.COMPLEX_UNIT_PX,
+                AppearanceConfig.TextDensity.getExtensionTitleTextSize(mContext,
+                mOptions.textDensity));
+        vb.setTextViewTextSize(R.id.text2,TypedValue.COMPLEX_UNIT_PX,
+                AppearanceConfig.TextDensity.getExtensionBodyTextSize(mContext,
+                mOptions.textDensity));
+
         vb.setTextViewText(R.id.text1, Utils.expandedTitleOrStatus(ewd.latestData));
         vb.setTextViewColor(R.id.text1, mOptions.foregroundColor);
 
@@ -486,6 +504,7 @@ public abstract class DashClockRenderer {
 
         // Font preferences
         public String font = AppearanceConfig.PREF_FONT_LIGHT;
+        public int textDensity = AppearanceConfig.TextDensity.DEFAULT_DENSITY;
 
         public boolean showSeparator = false;
     }

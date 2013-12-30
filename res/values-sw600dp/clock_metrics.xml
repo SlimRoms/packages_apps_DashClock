@@ -18,8 +18,8 @@
     <dimen name="clock_left_margin">40dp</dimen>
 
     <!-- We use dp units instead of sp since the lock screen is a fixed size area. -->
-    <dimen name="clock_text_size_large">84dp</dimen>
-    <dimen name="clock_text_size_small">56dp</dimen>
+    <dimen name="clock_text_size_large_comfortable">84dp</dimen>
+    <dimen name="clock_text_size_small_comfortable">56dp</dimen>
     <dimen name="clock_date_text_size">18dp</dimen>
     <dimen name="clock_date_top_margin">-18dp</dimen>
     <dimen name="clock_margin_offset">18dp</dimen>

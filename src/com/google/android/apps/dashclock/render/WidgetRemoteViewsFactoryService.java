@@ -118,6 +118,7 @@ public class WidgetRemoteViewsFactoryService extends RemoteViewsService {
             options.foregroundColor = AppearanceConfig.getForegroundColor(mContext, mTarget);
             options.backgroundColor = AppearanceConfig.getBackgroundColor(mContext, mTarget);
             options.font = AppearanceConfig.getFont(mContext);
+            options.textDensity = AppearanceConfig.getTextDensity(mContext);
             options.showSeparator = AppearanceConfig.getShowSeparator(mContext, mTarget);
 
             renderer.setOptions(options);

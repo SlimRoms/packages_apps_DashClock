@@ -22,7 +22,7 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">#fff</item>
-        <item name="android:textSize">@dimen/clock_text_size_large</item>
+        <item name="android:textSize">@dimen/clock_text_size_large_comfortable</item>
         <item name="android:ellipsize">none</item>
         <item name="android:singleLine">true</item>
         <item name="android:maxLines">1</item>
@@ -33,7 +33,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:fontFamily">sans-serif-light</item>
         <item name="android:textColor">#fff</item>
-        <item name="android:textSize">@dimen/clock_date_text_size</item>
+        <item name="android:textSize">@dimen/clock_date_text_size_comfortable</item>
         <item name="android:ellipsize">none</item>
         <item name="android:singleLine">true</item>
         <item name="android:maxLines">1</item>
@@ -81,14 +81,14 @@
         <item name="android:alpha">1.0</item>
         <item name="android:fontFamily">sans-serif-light</item>
         <item name="android:textStyle">normal</item>
-        <item name="android:textSize">@dimen/extension_expanded_title_text_size</item>
+        <item name="android:textSize">@dimen/extension_expanded_title_text_size_comfortable</item>
         <item name="android:lineSpacingMultiplier">0.9</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:maxLines">3</item>
     </style>
 
     <style name="ExtensionData.Text.ExpandedBody">
-        <item name="android:textSize">@dimen/extension_expanded_body_text_size</item>
+        <item name="android:textSize">@dimen/extension_expanded_body_text_size_comfortable</item>
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:maxLines">5</item>
@@ -100,7 +100,6 @@
 
     <style name="ExtensionData.Text.ExpandedBody.Condensed" parent="ExtensionData.Text.ExpandedBody">
         <item name="android:fontFamily">sans-serif-condensed</item>
-        <item name="android:textSize">@dimen/extension_expanded_body_text_size_condensed</item>
     </style>
 
     <style name="ExtensionData.Text.Collapsed">

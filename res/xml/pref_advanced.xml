@@ -53,6 +53,15 @@
         android:negativeButtonText="@null"
         android:positiveButtonText="@null" />
 
+    <ListPreference
+        android:key="pref_text_density"
+        android:entryValues="@array/pref_text_density_values"
+        android:entries="@array/pref_text_density_display_names"
+        android:title="@string/pref_text_density_title"
+        android:defaultValue="0"
+        android:negativeButtonText="@null"
+        android:positiveButtonText="@null" />
+
     <PreferenceCategory android:title="@string/pref_homescreen_title">
         <ListPreference
             android:key="pref_homescreen_background_opacity"
