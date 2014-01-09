@@ -39,6 +39,11 @@
     <string name="done">Kész</string>
     <string name="add_extension">Kiegészítő hozzáadása</string>
     <string name="cancel">Mégse</string>
+    <string name="remove">Eltávolítás</string>
+
+    <string name="undo">Vissza</string>
+    <string name="extension_removed_template">\'%1$s\' eltávolítva.</string>
+    <string name="extensions_removed_template">%1%d kiegészítők eltávolítva.</string>
 
     <string name="send_logs">Hibajelentés küldése</string>
     <string name="send_logs_chooser_title">Napló küldése</string>
@@ -99,6 +104,7 @@
         A következő beütemezett riasztásról jelenít meg információt.
     </string>
     <string name="next_alarm">Következő riasztás</string>
+    <string name="title_next_alarm_settings">További kiegészítő riasztás beállításai</string>
 
     <!-- Calendar -->
     <string name="calendar_extension_title">Naptár</string>
