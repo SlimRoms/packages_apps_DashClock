@@ -29,6 +29,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -209,7 +210,9 @@ public class AppChooserPreference extends Preference {
         public Dialog onCreateDialog(Bundle savedInstanceState) {
             // Force Holo Light since ?android:actionBarXX would use dark action bar
             Context layoutContext = new ContextThemeWrapper(getActivity(),
-                    android.R.style.Theme_Holo_Light);
+                    getActivity().getResources().getConfiguration().uiThemeMode
+                        == Configuration.UI_THEME_MODE_HOLO_DARK
+                        ? android.R.style.Theme_Holo : android.R.style.Theme_Holo_Light);
 
             LayoutInflater layoutInflater = LayoutInflater.from(layoutContext);
             View rootView = layoutInflater.inflate(R.layout.dialog_app_chooser, null);

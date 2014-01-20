@@ -22,6 +22,7 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Context;
 import android.content.res.Resources;
+import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -95,7 +96,7 @@ public class ColorPreference extends Preference {
     protected void onBindView(View view) {
         super.onBindView(view);
         mPreviewView = view.findViewById(R.id.color_view);
-        setColorViewValue(mPreviewView, mValue, false);
+        setColorViewValue(getContext(), mPreviewView, mValue, false);
     }
 
     public void setValue(int value) {
@@ -197,7 +198,7 @@ public class ColorPreference extends Preference {
                 View itemView = LayoutInflater.from(context)
                             .inflate(R.layout.grid_item_color, mColorGrid, false);
 
-                setColorViewValue(itemView.findViewById(R.id.color_view), color,
+                setColorViewValue(context, itemView.findViewById(R.id.color_view), color,
                         color == mPreference.getValue());
                 itemView.setClickable(true);
                 itemView.setFocusable(true);
@@ -250,7 +251,8 @@ public class ColorPreference extends Preference {
         }
     }
 
-    private static void setColorViewValue(View view, int color, boolean selected) {
+    private static void setColorViewValue(
+            Context context, View view, int color, boolean selected) {
         if (view instanceof ImageView) {
             ImageView imageView = (ImageView) view;
             Resources res = imageView.getContext().getResources();
@@ -265,15 +267,21 @@ public class ColorPreference extends Preference {
                 colorChoiceDrawable.setShape(GradientDrawable.OVAL);
             }
 
-            // Set stroke to dark version of color
-            int darkenedColor = Color.rgb(
+            // Set stroke
+            int strokeColor = 0;
+            if (context.getResources().getConfiguration().uiThemeMode
+                        == Configuration.UI_THEME_MODE_HOLO_DARK && color == Color.BLACK) {
+                strokeColor = Color.GRAY;
+            } else {
+                strokeColor = Color.rgb(
                     Color.red(color) * 192 / 256,
                     Color.green(color) * 192 / 256,
                     Color.blue(color) * 192 / 256);
+            }
 
             colorChoiceDrawable.setColor(color);
             colorChoiceDrawable.setStroke((int) TypedValue.applyDimension(
-                    TypedValue.COMPLEX_UNIT_DIP, 1, res.getDisplayMetrics()), darkenedColor);
+                    TypedValue.COMPLEX_UNIT_DIP, 1, res.getDisplayMetrics()), strokeColor);
 
             Drawable drawable = colorChoiceDrawable;
             if (selected) {
