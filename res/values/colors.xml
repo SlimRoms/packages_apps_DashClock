@@ -15,12 +15,12 @@
   -->
 
 <resources>
-    <color name="extension_list_item_color">#09c</color>
+    <color name="extension_list_item_color">#c333</color>
     <color name="configure_light_background">#f2f2f2</color>
     <color name="primary_text_color">#000</color>
-	
-	<!-- Drag Handle Color from layout -->
-	<color name="drag_handle">#2333</color>
+
+    <!-- Drag Handle Color from layout -->
+    <color name="drag_handle">#2333</color>
 
     <string-array name="default_color_choice_values" translatable="false">
         <item>#33b5e5</item>
@@ -53,7 +53,20 @@
     </string-array>
 
     <string-array name="widget_color_choice_values" translatable="false">
+        <item>#33b5e5</item>
+        <item>#aa66cc</item>
+        <item>#99cc00</item>
+        <item>#ffbb33</item>
+        <item>#ff4444</item>
+        <item>#0099cc</item>
+        <item>#9933cc</item>
+        <item>#669900</item>
+        <item>#ff8800</item>
+        <item>#cc0000</item>
         <item>#ffffff</item>
+        <item>#eeeeee</item>
+        <item>#cccccc</item>
+        <item>#888888</item>
         <item>#000000</item>
     </string-array>
 </resources>

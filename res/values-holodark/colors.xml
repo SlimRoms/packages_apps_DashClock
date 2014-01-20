@@ -15,45 +15,11 @@
   -->
 
 <resources>
-    <color name="extension_list_item_color">#09c</color>
+    <color name="extension_list_item_color">#fff</color>
     <color name="configure_light_background">#000000</color>
     <color name="primary_text_color">#fff</color>
-	
-	<!-- Drag Handle Color from layout -->
-	<color name="drag_handle">#8888</color>
 
-    <string-array name="default_color_choice_values" translatable="false">
-        <item>#33b5e5</item>
-        <item>#aa66cc</item>
-        <item>#99cc00</item>
-        <item>#ffbb33</item>
-        <item>#ff4444</item>
-        <item>#0099cc</item>
-        <item>#9933cc</item>
-        <item>#669900</item>
-        <item>#ff8800</item>
-        <item>#cc0000</item>
-        <item>#ffffff</item>
-        <item>#eeeeee</item>
-        <item>#cccccc</item>
-        <item>#888888</item>
-    </string-array>
+    <!-- Drag Handle Color from layout -->
+    <color name="drag_handle">#8888</color>
 
-    <string-array name="daydream_color_choice_values" translatable="false">
-        <item>#8f6fab</item>
-        <item>#0099cc</item>
-        <item>#2f9b76</item>
-        <item>#ab8254</item>
-        <item>#ca6949</item>
-        <item>#ffffff</item>
-        <item>#eeeeee</item>
-        <item>#cccccc</item>
-        <item>#888888</item>
-        <item>#555555</item>
-    </string-array>
-
-    <string-array name="widget_color_choice_values" translatable="false">
-        <item>#ffffff</item>
-        <item>#000000</item>
-    </string-array>
 </resources>

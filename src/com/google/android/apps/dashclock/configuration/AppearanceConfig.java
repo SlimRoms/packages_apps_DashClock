@@ -44,6 +44,7 @@ public class AppearanceConfig {
     static final String PREF_SETTINGS_BUTTON_IN_LAUNCHER = "inlauncher";
 
     static final String PREF_HOMESCREEN_FOREGROUND_COLOR = "pref_homescreen_foreground_color";
+    static final String PREF_HOMESCREEN_BACKGROUND_COLOR = "pref_homescreen_background_color";
     static final String PREF_HOMESCREEN_BACKGROUND_OPACITY = "pref_homescreen_background_opacity";
 
     static final String PREF_COLLAPSE_CONDITIONS = "pref_collapse_conditions";
@@ -54,6 +55,7 @@ public class AppearanceConfig {
     static final String PREF_HOMESCREEN_SHOW_SEPARATOR = "pref_homescreen_show_separator";
 
     static final String PREF_LOCKSCREEN_FOREGROUND_COLOR = "pref_lockscreen_foreground_color";
+    static final String PREF_LOCKSCREEN_BACKGROUND_COLOR = "pref_lockscreen_background_color";
     static final String PREF_LOCKSCREEN_BACKGROUND_OPACITY = "pref_lockscreen_background_opacity";
     static final String PREF_LOCKSCREEN_HIDE_CLOCK = "pref_lockscreen_hide_clock";
     static final String PREF_LOCKSCREEN_SHOW_SEPARATOR = "pref_lockscreen_show_separator";
@@ -180,7 +182,6 @@ public class AppearanceConfig {
     }
 
     public static int getBackgroundColor(Context context, int target) {
-        int foregroundColor = getForegroundColor(context, target);
         int opacity = 0;
         try {
             if (target == DashClockRenderer.Options.TARGET_HOME_SCREEN) {
@@ -193,7 +194,14 @@ public class AppearanceConfig {
         } catch (NumberFormatException ignored) {
         }
 
-        int backgroundColor = (foregroundColor == Color.WHITE) ? Color.BLACK : Color.WHITE;
+        int backgroundColor = 0;
+        if (target == DashClockRenderer.Options.TARGET_HOME_SCREEN) {
+            backgroundColor = PreferenceManager.getDefaultSharedPreferences(context)
+                    .getInt(PREF_HOMESCREEN_BACKGROUND_COLOR, Color.BLACK);
+        } else if (target == DashClockRenderer.Options.TARGET_LOCK_SCREEN) {
+            backgroundColor = PreferenceManager.getDefaultSharedPreferences(context)
+                    .getInt(PREF_LOCKSCREEN_BACKGROUND_COLOR, Color.BLACK);
+        }
         return (backgroundColor & 0xffffff) | ((opacity * 255 / 100) << 24);
     }
 
