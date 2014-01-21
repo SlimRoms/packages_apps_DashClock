@@ -83,7 +83,8 @@
 
         <ImageButton android:id="@+id/overflow_button"
             android:layout_width="48dp"
-            android:layout_height="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="3dp"
             android:background="?android:selectableItemBackground"
             android:src="@drawable/configure_item_overflow_default"
             android:scaleType="fitXY"
