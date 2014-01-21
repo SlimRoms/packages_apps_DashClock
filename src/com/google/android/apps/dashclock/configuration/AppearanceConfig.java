@@ -181,7 +181,7 @@ public class AppearanceConfig {
         return DEFAULT_WIDGET_FOREGROUND_COLOR;
     }
 
-    public static int getBackgroundColor(Context context, int target) {
+    public static int getBackgroundOpacity(Context context, int target) {
         int opacity = 0;
         try {
             if (target == DashClockRenderer.Options.TARGET_HOME_SCREEN) {
@@ -193,6 +193,11 @@ public class AppearanceConfig {
             }
         } catch (NumberFormatException ignored) {
         }
+        return opacity;
+    }
+
+    public static int getBackgroundColor(Context context, int target) {
+        int opacity = getBackgroundOpacity(context, target);
 
         int backgroundColor = 0;
         if (target == DashClockRenderer.Options.TARGET_HOME_SCREEN) {
