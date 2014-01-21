@@ -119,4 +119,24 @@
     <string name="pref_hide_clock_title">Скрывать часы</string>
     <string name="pref_hide_clock_description">Скрывать часы и показывать только расширения</string>
 
+    <!-- Font preferences -->
+    <string name="pref_font_title">Шрифт</string>
+    <string-array name="pref_font_display_names">
+        <item>Разреженный</item>
+        <item>Сжатый</item>
+    </string-array>
+
+    <!-- Background color -->
+    <string name="pref_background_color_title">Цвет фона</string>
+    <string name="pref_background_color_description">Цвет фона</string>
+    <!-- Separator -->
+    <string name="pref_show_separator_title">Разделитель между расширениями</string>
+    <string name="pref_show_separator_description">Показывать тень между расширениями</string>
+    <!-- Density -->
+    <string name="pref_text_density_title">Плотность текста</string>
+    <string-array name="pref_text_density_display_names">
+        <item>Удобная</item>
+        <item>Уютная</item>
+        <item>Компактная</item>
+    </string-array>
 </resources>
