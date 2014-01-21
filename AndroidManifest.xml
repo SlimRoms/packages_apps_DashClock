@@ -180,7 +180,8 @@
         </service>
 
         <activity android:name="com.google.android.apps.dashclock.nextalarm.NextAlarmSettingsActivity"
-            android:label="@string/title_next_alarm_settings" />
+            android:label="@string/title_next_alarm_settings"
+            android:theme="@style/PreferencesTheme" />
 
         <service
             android:name="com.google.android.apps.dashclock.gmail.GmailExtension"
