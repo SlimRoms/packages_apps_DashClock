@@ -71,6 +71,27 @@ public class ConfigureAdvancedFragment extends PreferenceFragment
                 findPreference(AppearanceConfig.PREF_FONT));
         BaseSettingsActivity.bindPreferenceSummaryToValue(
                 findPreference(AppearanceConfig.PREF_TEXT_DENSITY));
+
+        updateBackgroundColorPreference(AppearanceConfig.PREF_HOMESCREEN_BACKGROUND_COLOR);
+        updateBackgroundColorPreference(AppearanceConfig.PREF_LOCKSCREEN_BACKGROUND_COLOR);
+    }
+
+    private void updateBackgroundColorPreference(String key) {
+        ColorPreference backGroundColorPreference =
+                (ColorPreference) findPreference(key);
+        if (backGroundColorPreference == null) {
+            return;
+        }
+
+        if (AppearanceConfig.PREF_HOMESCREEN_BACKGROUND_COLOR.equals(key)) {
+            backGroundColorPreference.setEnabled(
+                AppearanceConfig.getBackgroundOpacity(getActivity(),
+                    DashClockRenderer.Options.TARGET_HOME_SCREEN) > 0);
+        } else if (AppearanceConfig.PREF_LOCKSCREEN_BACKGROUND_COLOR.equals(key)) {
+            backGroundColorPreference.setEnabled(
+                AppearanceConfig.getBackgroundOpacity(getActivity(),
+                    DashClockRenderer.Options.TARGET_LOCK_SCREEN) > 0);
+        }
     }
 
     @Override
@@ -110,6 +131,14 @@ public class ConfigureAdvancedFragment extends PreferenceFragment
                             ? PackageManager.COMPONENT_ENABLED_STATE_ENABLED
                             : PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
                     PackageManager.DONT_KILL_APP);
+        }
+
+        // update state of backgroundpreferences if opacity changed
+        if (AppearanceConfig.PREF_HOMESCREEN_BACKGROUND_OPACITY.equals(key)) {
+            updateBackgroundColorPreference(AppearanceConfig.PREF_HOMESCREEN_BACKGROUND_COLOR);
+        }
+        if (AppearanceConfig.PREF_LOCKSCREEN_BACKGROUND_OPACITY.equals(key)) {
+            updateBackgroundColorPreference(AppearanceConfig.PREF_LOCKSCREEN_BACKGROUND_COLOR);
         }
     }
 }
